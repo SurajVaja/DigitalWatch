@@ -24,7 +24,7 @@ body{
 }
 .box{
     font-size: 40px;
-    border: 1px solid blue;
+    border: 2px solid blue;
     
 }
 .id{
@@ -42,7 +42,7 @@ body{
    font-size: 42px;
 }
 #time{
-    border: 1px solid blue;
+    border: 2px solid blue;
     padding: 5px;
     width: 280px;
     height: auto;
