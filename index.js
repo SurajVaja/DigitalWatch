@@ -7,7 +7,21 @@ const updateClock = () => {
   let month = String(d.getMonth() + 1).padStart(2, "0");
   let date = String(d.getDate()).padStart(2, "0");
   let hr = d.getHours();
-  if (hr <= 12) {
+  if (hr === 0) {
+    let time =
+      "12" +
+      "  " +
+      ":" +
+      "  " +
+      String(d.getMinutes()).padStart(2, "0") +
+      "  " +
+      ":" +
+      "  " +
+      String(d.getSeconds()).padStart(2, "0");
+
+    gt("#time").innerHTML = time;
+    gt("#pm").innerHTML = "AM";
+  } else if (hr <= 12) {
     let time =
       String(hr).padStart(2, "0") +
       "  " +
@@ -36,20 +50,6 @@ const updateClock = () => {
 
     gt("#time").innerHTML = time;
     gt("#pm").innerHTML = "PM";
-  } else {
-    let time =
-      "12" +
-      "  " +
-      ":" +
-      "  " +
-      String(d.getMinutes()).padStart(2, "0") +
-      "  " +
-      ":" +
-      "  " +
-      String(d.getSeconds()).padStart(2, "0");
-
-    gt("#time").innerHTML = time;
-    gt("#pm").innerHTML = "AM";
   }
 
   gt("#box-1").innerHTML = date;
