@@ -21,7 +21,7 @@ const updateClock = () => {
 
     gt("#time").innerHTML = time;
     gt("#pm").innerHTML = "AM";
-  } else if (hr <= 12) {
+  } else if (hr < 12) {
     let time =
       String(hr).padStart(2, "0") +
       "  " +
@@ -39,6 +39,21 @@ const updateClock = () => {
     let hor = (12 - hr) * -1;
     let time =
       String(hor).padStart(2, "0") +
+      "  " +
+      ":" +
+      "  " +
+      String(d.getMinutes()).padStart(2, "0") +
+      "  " +
+      ":" +
+      "  " +
+      String(d.getSeconds()).padStart(2, "0");
+
+    gt("#time").innerHTML = time;
+    gt("#pm").innerHTML = "PM";
+  } else if (hr == 12) {
+    let hor = 12;
+    let time =
+      "12" +
       "  " +
       ":" +
       "  " +
